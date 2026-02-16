@@ -489,35 +489,83 @@
             <p>Intact is attempting to unlawfully bankrupt a whistleblower for raising these issues of racism.</p>
         </section>
     </div>
-<section class="section">
+        <section class="section">
             <h2>Evidence and Documents</h2>
             <p style="margin-bottom: 20px;">The following documents and communications serve as evidence for the allegations detailed above. Many of these files are part of ongoing legal proceedings and tribunal requests.</p>
-            
+
+            <!-- The list will be populated by JavaScript below -->
             <div class="document-category">
                 <h3>Legal Filings & Tribunal Documents</h3>
-                <ul class="file-list">
-                    <li><strong>N161 Appeals:</strong> N161 700MC593.pdf, N161 700MC944.pdf, n161 M01LS598.pdf, n161 M01LS600.pdf</li>
-                    <li><strong>N244 Applications:</strong> N244 700MC593, M01LS598, M01LS600, 700MC944, 700MC593 05022026.pdf</li>
-                    <li><strong>Court Requests:</strong> Request to court – 28th February 2025.docx, April tribunal request.docx</li>
-                    <li><strong>Grounds of Appeal:</strong> Grounds of Appeal to support n161.docx</li>
-                </ul>
+                <ul id="evidence-list-legal" class="file-list"></ul>
             </div>
 
             <div class="document-category">
                 <h3>Internal Communications & Emails</h3>
-                <ul class="file-list">
-                    <li><strong>Official Complaints:</strong> 2406202_2023 - Alim v Royal and Sun Alliance Insurance complaint.eml</li>
-                    <li><strong>Urgent Requests:</strong> URGENT_ APPLICATION FOR ABDUL ALIM v ASHLEY MCGHEE, MARGARET MCALLISTER 700MC593 M01LS600 M01LS598.eml</li>
-                    <li><strong>DSAR Evidence:</strong> Urgent_ Formal Request for Full Compliance with 2023 DSARs - Evidence of Unlawful Withholding.msg</li>
-                    <li><strong>Case Concerns:</strong> Further Concerns Regarding Case 2406202_2023 Abdul Alim v Royal and Sun Alliance Limited.msg</li>
-                    <li><strong>Legal Advice Issues:</strong> Poor and unsolicited legal advice causing me an unfair detriment.eml</li>
-                    <li>Pinsent Masons LLP email address.xlsx</li>
-                </ul>
+                <ul id="evidence-list-emails" class="file-list"></ul>
             </div>
+
+            <noscript>
+                <p style="color: #c0392b;">JavaScript is required to render the document links. If you don't want JS, add the files manually as &lt;a&gt; tags pointing to the correct paths.</p>
+            </noscript>
+
+            <script>
+                // Put your evidence files here exactly as they appear in the repo
+                // Put the files in a folder called "evidence" in your repo, or change the prefix below.
+                const prefix = 'evidence/'; // adjust if you store files elsewhere
+
+                const legalFiles = [
+                    "N161 700MC593.pdf",
+                    "N161 700MC944.pdf",
+                    "n161 M01LS598.pdf",
+                    "n161 M01LS600.pdf",
+                    "N244 700MC593, M01LS598, M01LS600, 700MC944, 700MC593 05022026.pdf",
+                    "N244 700MC593, M01LS598, M01LS600, 700MC944, 700MC593.pdf",
+                    "Request to court – 28th February 2025.docx",
+                    "April tribunal request.docx",
+                    "Grounds of Appeal to support n161.docx"
+                ];
+
+                const emailFiles = [
+                    "2406202_2023 - Alim v Royal and Sun Alliance Insurance complaint.eml",
+                    "2406202_2023 Abdul Alim v Royal and Sun Alliance Insurance Limited.eml",
+                    "File (1).msg",
+                    "File.msg",
+                    "Further Concerns Regarding Case 2406202_2023 Abdul Alim v Royal and Sun Alliance Insurance Limited.msg",
+                    "Pinsent Masons LLP email address.xlsx",
+                    "Poor and unsolicited legal advice causing me an unfair detriment.eml",
+                    "RE_ URGENT - 2406202_2023 Abdul Alim v Royal and Sun Alliance Insurance Limited.msg",
+                    "Re_ 2406202_2023 Abdul Alim v Royal and Sun Alliance Insurance Limited.eml",
+                    "Re_ 2406202_2023 Abdul Alim v Royal and Sun Alliance Insurance Limited.msg",
+                    "URGENT_ APPLICATION FOR ABDUL ALIM v ASHLEY MCGHEE, MARGARET MCALLISTER 700MC593 M01LS600 M01LS598.eml",
+                    "Urgent_ Formal Request for Full Compliance with 2023 DSARs - Evidence of Unlawful Withholding.msg"
+                ];
+
+                function renderList(files, containerId) {
+                    const container = document.getElementById(containerId);
+                    files.forEach(filename => {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        // Use encodeURIComponent so filenames with spaces/commas/parentheses work
+                        a.href = prefix + encodeURIComponent(filename);
+                        a.target = '_blank';
+                        a.rel = 'noopener noreferrer';
+                        a.download = '';
+                        a.textContent = filename;
+                        li.appendChild(a);
+                        container.appendChild(li);
+                    });
+                }
+
+                // Render both lists
+                renderList(legalFiles, 'evidence-list-legal');
+                renderList(emailFiles, 'evidence-list-emails');
+            </script>
         </section>
-    <footer>
-        <p>This website documents allegations of serious workplace misconduct.</p>
-        <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">Information is strategically incomplete and will be updated over time.</p>
-    </footer>
+
+        <footer>
+            <p>This website documents allegations of serious workplace misconduct.</p>
+            <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">Information is strategically incomplete and will be updated over time.</p>
+        </footer>
+    </div>
 </body>
 </html>
