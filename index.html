@@ -499,26 +499,15 @@
             <p>Intact is attempting to unlawfully bankrupt a whistleblower for raising these issues of racism.</p>
         </section>
     </div>
+      
+          <div class="container">
         <section class="section">
             <h2>Evidence and Documents</h2>
             <p style="margin-bottom: 20px;">The following documents and communications serve as evidence for the allegations detailed above. Many of these files are part of ongoing legal proceedings and tribunal requests.</p>
             <p>Onedrive link with all documents: https://1drv.ms/f/c/730b4f5bcad1c4a8/IgA_yz0zzwXxSpPjiBKOZuDrAYBBSjlHdJeydwdpGRaIW9w?e=bhHp58</p>
-
-            <!-- The list will be populated by JavaScript below -->
-            <div class="document-category">
-                <h3>Legal Filings & Tribunal Documents</h3>
-                <ul id="evidence-list-legal" class="file-list"></ul>
-            </div>
-
-            <div class="document-category">
-                <h3>Internal Communications & Emails</h3>
-                <ul id="evidence-list-emails" class="file-list"></ul>
-            </div>
-
-            <noscript>
-                <p style="color: #c0392b;">JavaScript is required to render the document links. If you don't want JS, add the files manually as &lt;a&gt; tags pointing to the correct paths.</p>
-            </noscript>
-
+      </section>
+                  </div>
+                
             <script>
                 function renderList(files, containerId) {
                     const container = document.getElementById(containerId);
@@ -536,9 +525,6 @@
                     });
                 }
 
-                // Render both lists
-                renderList(legalFiles, 'evidence-list-legal');
-                renderList(emailFiles, 'evidence-list-emails');
             </script>
         </section>
 
